@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
+  <title>Weather-App</title>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+  <script src="https://kit.fontawesome.com/e68f9e9e3c.js" crossorigin="anonymous"></script>
+  <script src="./scripts/main.js" type="module"></script>
+</head>
+<body>
+
+<div class="bg-image"></div>
+
+<section class="section" data-js-root>
+  <div class="container">
+    <form class="input-button-group" data-js-form>
+      <input
+        class="input"
+        placeholder="Search City"
+        data-js-input
+      />
+      <button
+        type="submit"
+        class="button"
+      >
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+    <div class="location-data">
+      <div class="location-container">
+        <i class="fa-solid fa-location-dot"></i>
+        <span
+          class="location"
+          data-js-location
+        >
+          Лондон
+        </span>
+      </div>
+      <div
+        class="data"
+        data-js-data
+      >
+        Вт, 08 Авг
+      </div>
+    </div>
+    <div class="weather-info">
+      <img
+        class="weather__image"
+        src="./assets/weather/clear.svg"
+        alt="weather"
+        width="150"
+        height="150"
+        loading="lazy"
+        data-js-image-weather
+      />
+      <div class="temperature">
+        <span class="temperature-degree"
+        data-js-temperature>30</span>°C<br><span class="main"
+      data-js-weather-conditions>Clouds</span>
+      </div>
+    </div>
+    <div class="humidity-wind-speed-container">
+      <div class="humidity-container">
+        <i class="fa-solid fa-droplet"></i>
+        <div class="humidity">Humidity<br><span class="humidity-degree"
+        data-js-humidity>74</span>%</div>
+      </div>
+      <div class="wind-speed-container">
+        <i class="fa-solid fa-wind"></i>
+        <div class="wind-speed">Wind Speed<br><span class="wind-speed-m-s"
+        data-js-wind-speed>4.12</span> M/s</div>
+      </div>
+    </div>
+    <ul
+      class="weather-carousel-list"
+      data-js-carousel
+    >
+      <template data-js-carousel-item>
+        <div class="weather-carousel-item">
+          <div
+            class="carousel-data"
+            data-js-carousel-data
+          >
+            Aug 09
+          </div>
+          <img
+            class="carousel-image"
+            src="./assets/weather/clear.svg"
+            alt="weather"
+            width="30"
+            height="30"
+            loading="lazy"
+            data-js-carousel-image
+          />
+          <div
+            class="carousel-temperature"
+            data-js-carousel-temperature
+          >28°C</div>
+        </div>
+      </template>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>
