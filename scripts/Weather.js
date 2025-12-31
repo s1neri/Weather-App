@@ -42,18 +42,24 @@ class Weather {
   async init() {
     if (this.isWeatherLoaded) return
 
-    const data = await getLocation()
+    try {
+      const data = await getLocation()
 
-    const [data1, data2] = await getWeatherAPI({coord: data})
+      const [data1, data2] = await getWeatherAPI({coord: data})
 
-    this.data1 = data1
-    this.data2 = data2
+      this.data1 = data1
+      this.data2 = data2
 
-    this.isWeatherLoaded = true
+      this.isWeatherLoaded = true
 
-    this.updateUI()
-    this.render()
-    this.bindEvents()
+      this.updateUI()
+      this.render()
+      this.bindEvents()
+    } catch (error) {
+      console.error(error)
+    } finally {
+      this.bindEvents()
+    }
   }
 
   filterWeather() {
